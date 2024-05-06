@@ -8,9 +8,9 @@ function Sidepanel() {
 				<div className="flex items-center justify-center h-20 border-b border-gray-200">
 					<NavLink
 						to={"/"}
-						className="text-3xl font-semibold text-blue-600"
+						className="text-3xl font-bold text-blue-600 font-sans"
 					>
-						SENDPORTAL
+						SIMPL EMAIL
 					</NavLink>
 				</div>
 				<div className="flex flex-col flex-grow p-4 overflow-auto">

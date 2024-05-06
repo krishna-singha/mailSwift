@@ -17,7 +17,7 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import tableData from "@/src/Data.";
+import tableData from "@/src/Data";
 
 function Subscriber() {
 	return (
@@ -53,7 +53,7 @@ function Subscriber() {
 				</div>
 			</div>
 
-			<div className="mt-4">
+			<div className="mt-4 overflow-auto  lg:h-[535px]">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>
