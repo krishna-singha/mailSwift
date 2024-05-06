@@ -8,7 +8,7 @@ import Sidepanel from "./components/Navigation/Sidepanel";
 function Layout() {
 	return (
 		<>
-			<div className="flex h-screen bg-gray-100">
+			<div className="flex min-h-screen bg-gray-100">
 				<Sidepanel />
 				<Navbar />
 			</div>

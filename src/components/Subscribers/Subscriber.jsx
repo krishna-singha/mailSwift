@@ -67,14 +67,17 @@ function Subscriber() {
 					<TableBody>
 						{tableData.map((data, key) => {
 							return (
-								<TableRow>
+								<TableRow key={key}>
 									<TableCell>{data.email}</TableCell>
 									<TableCell>{data.name}</TableCell>
 									<TableCell>{data.lastActive}</TableCell>
 									<TableCell>
 										<Badge
 											className={
-												"bg-emerald-200 text-emerald-800 font-semibold"
+												data.subscriptionStatus ==
+												"Subscribed"
+													? "bg-emerald-200 text-emerald-800"
+													: "bg-red-200 text-red-800"
 											}
 											variant="primary"
 										>
@@ -82,7 +85,9 @@ function Subscriber() {
 										</Badge>
 									</TableCell>
 									<TableCell>
-										<Button variant="outline">{data.actions}</Button>
+										<Button variant="outline">
+											{data.actions}
+										</Button>
 									</TableCell>
 								</TableRow>
 							);

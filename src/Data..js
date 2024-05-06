@@ -18,5 +18,5 @@ const generateTableData = (rowCount) => {
 	return tableData;
 };
 
-const tableData = generateTableData(5);
+const tableData = generateTableData(15);
 export default tableData;

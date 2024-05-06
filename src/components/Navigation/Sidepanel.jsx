@@ -1,59 +1,104 @@
-import { Button } from "@/components/ui/button";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Sidepanel() {
 	return (
 		<>
 			<div className="flex flex-col w-64 border-r border-gray-200 bg-white">
 				<div className="flex items-center justify-center h-20 border-b border-gray-200">
-					<h1 className="text-3xl font-semibold text-blue-600">
+					<NavLink
+						to={"/"}
+						className="text-3xl font-semibold text-blue-600"
+					>
 						SENDPORTAL
-					</h1>
+					</NavLink>
 				</div>
 				<div className="flex flex-col flex-grow p-4 overflow-auto">
 					<nav className="flex flex-col space-y-1">
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-							variant="ghost"
+						<NavLink
+							to={"/dashboard"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Dashboard
-						</Button>
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-							variant="ghost"
+						</NavLink>
+						<NavLink
+							to={"/campaigns"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Campaigns
-						</Button>
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-							variant="ghost"
+						</NavLink>
+						<NavLink
+							to={"/templates"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Templates
-						</Button>
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
-							variant="secondary"
+						</NavLink>
+						<NavLink
+							to={"/subscribers"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Subscribers
-						</Button>
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-							variant="ghost"
+						</NavLink>
+						<NavLink
+							to={"/messages"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Messages
-						</Button>
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-							variant="ghost"
+						</NavLink>
+						<NavLink
+							to={"/email-services"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Email Services
-						</Button>
-						<Button
-							className="justify-start rounded-none text-left text-sm font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600"
-							variant="ghost"
+						</NavLink>
+						<NavLink
+							to={"/manage-users"}
+							className={({ isActive }) =>
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
+									isActive
+										? "text-white bg-blue-600 hover:bg-blue-700"
+										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								}`
+							}
 						>
 							Manage Users
-						</Button>
+						</NavLink>
 					</nav>
 				</div>
 			</div>
