@@ -21,7 +21,7 @@ import tableData from "@/src/Data";
 
 function Subscriber() {
 	return (
-		<div className="flex flex-col p-8">
+		<div className="flex flex-col p-8 pb-0">
 			<div className="flex flex-row gap-5 justify-between">
 				<div className="flex flex-row space-x-4">
 					<Input
@@ -34,12 +34,13 @@ function Subscriber() {
 							id="filter"
 							className="max-w-60 min-w-16"
 						>
-							<SelectValue placeholder="All" />
+							<SelectValue placeholder="Select your option" />
 						</SelectTrigger>
 						<SelectContent>
-							<SelectItem value="all">All</SelectItem>
-							<SelectItem value="all">hello</SelectItem>
-							<SelectItem value="all">d</SelectItem>
+							<SelectItem value="option1">Option 1</SelectItem>
+							<SelectItem value="option2">Option 2</SelectItem>
+							<SelectItem value="option3">Option 3</SelectItem>
+							<SelectItem value="option4">Option 4</SelectItem>
 						</SelectContent>
 					</Select>
 					<Button>Search</Button>
@@ -53,7 +54,7 @@ function Subscriber() {
 				</div>
 			</div>
 
-			<div className="mt-4 overflow-auto  lg:h-[535px]">
+			<div className="mt-4 overflow-auto lg:h-[525px]">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>
