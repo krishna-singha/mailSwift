@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -63,7 +62,7 @@ function MessageDraft() {
 				</div>
 			</div>
 
-			<div className="mt-4 overflow-auto h-[725px]">
+			<div className="mt-4 overflow-auto lg:h-[490px]">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>

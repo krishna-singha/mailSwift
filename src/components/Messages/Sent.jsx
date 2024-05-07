@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,7 +17,7 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import {messagesTableData} from "@/src/Data";
+import { messagesTableData } from "@/src/Data";
 
 function MessageSent() {
 	return (
@@ -63,7 +62,7 @@ function MessageSent() {
 				</div>
 			</div>
 
-			<div className="mt-4 overflow-auto">
+			<div className="mt-4 overflow-auto lg:h-[490px]">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>
@@ -94,15 +93,12 @@ function MessageSent() {
 
 									<TableCell>
 										<Badge
-											className={`rounded-md ${
-												data.status === "Delivered"
-													? "bg-blue-200 text-blue-800"
-													: data.status ===
-															"Opened" ||
-													  data.status === "Clicked"
+											className={`rounded-md ${data.status === "Delivered"
+												? "bg-blue-200 text-blue-800"
+												: data.status === "Opened" || data.status === "Clicked"
 													? "bg-emerald-200 text-emerald-800"
 													: "bg-red-200 text-red-800"
-											}`}
+												}`}
 											variant="primary"
 										>
 											{data.status}
