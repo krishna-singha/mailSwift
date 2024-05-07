@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -22,7 +22,7 @@ function MessageDraft() {
 	const messagesTableData = useLoaderData();
 
 	return (
-		<div className="flex h-[100%] flex-col p-8 overflow-y-scroll no-scrollbar">
+		<div className="flex h-[100%] flex-col p-8">
 			<div className="flex gap-8 mb-6">
 				<NavLink
 					to={"/messages"}
@@ -63,7 +63,7 @@ function MessageDraft() {
 				</div>
 			</div>
 
-			<div className="mt-4">
+			<div className="mt-4 overflow-auto overflow-y-scroll">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>

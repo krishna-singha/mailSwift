@@ -22,7 +22,7 @@ function MessageSent() {
 	const messagesTableData = useLoaderData();
 
 	return (
-		<div className="flex h-[100%] flex-col p-8 overflow-y-scroll no-scrollbar">
+		<div className="flex h-[100%] flex-col p-8">
 			<div className="flex gap-8 mb-6">
 				<NavLink
 					to={"/messages"}
@@ -63,7 +63,7 @@ function MessageSent() {
 				</div>
 			</div>
 
-			<div className="mt-4">
+			<div className="mt-4 overflow-auto overflow-y-scroll no-scrollbar">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>
@@ -94,15 +94,12 @@ function MessageSent() {
 
 									<TableCell>
 										<Badge
-											className={`rounded-md ${
-												data.status === "Delivered"
+											className={`rounded-md ${data.status === "Delivered"
 													? "bg-blue-200 text-blue-800"
-													: data.status ===
-															"Opened" ||
-													  data.status === "Clicked"
-													? "bg-emerald-200 text-emerald-800"
-													: "bg-red-200 text-red-800"
-											}`}
+													: data.status === "Opened" || data.status === "Clicked"
+														? "bg-emerald-200 text-emerald-800"
+														: "bg-red-200 text-red-800"
+												}`}
 											variant="primary"
 										>
 											{data.status}
