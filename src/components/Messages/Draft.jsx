@@ -21,7 +21,7 @@ import {messagesTableData} from "@/src/Data";
 
 function MessageDraft() {
 	return (
-		<div className="flex flex-col overflow-y-hidden p-8 pb-4">
+		<div className="flex h-[100%] flex-col p-8 overflow-y-scroll no-scrollbar">
 			<div className="flex gap-8 mb-6">
 				<NavLink
 					to={"/messages"}
@@ -62,7 +62,7 @@ function MessageDraft() {
 				</div>
 			</div>
 
-			<div className="mt-4 overflow-auto lg:h-[490px]">
+			<div className="mt-4">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>

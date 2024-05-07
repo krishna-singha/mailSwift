@@ -5,7 +5,7 @@ import React from "react";
 function Navbar() {
 	return (
 		<>
-			<div className="flex flex-col flex-grow bg-blue-100">
+			<div className="flex flex-col flex-grow h-screen bg-blue-100">
 				<div className="flex items-center justify-between h-20 px-8 bg-white w-full">
 					<h2 className="text-2xl font-semibold">Subscribers</h2>
 					<div className="flex items-center">
@@ -19,7 +19,9 @@ function Navbar() {
 						<p className="ml-4 mr-4">Jon banega Don</p>
 					</div>
 				</div>
-				<Outlet />
+				<div className="h-[calc(100%-5rem)]">
+					<Outlet />
+				</div>
 			</div>
 		</>
 	);

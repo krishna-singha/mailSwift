@@ -21,7 +21,9 @@ import { useMemo, useState } from "react";
 import Highlighter from "react-highlight-words";
 
 function Subscriber() {
-	const [subscriptionData, setSubscriptionData] = useState(subscriptionTableData);
+	const [subscriptionData, setSubscriptionData] = useState(
+		subscriptionTableData
+	);
 	const [searchString, setSearchString] = useState("");
 
 	useMemo(() => {
@@ -35,11 +37,8 @@ function Subscriber() {
 		}
 	}, [searchString]);
 
-
-
-
 	return (
-		<div className="flex flex-col p-8 pb-0">
+		<div className="flex h-[100%] flex-col p-8 overflow-y-scroll no-scrollbar">
 			<div className="flex flex-row gap-5 justify-between">
 				<div className="flex flex-row space-x-4">
 					<Input
@@ -72,7 +71,7 @@ function Subscriber() {
 				</div>
 			</div>
 
-			<div className="mt-4 overflow-auto lg:h-[525px]">
+			<div className="mt-4">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>
@@ -99,7 +98,7 @@ function Subscriber() {
 										<Badge
 											className={
 												data.subscriptionStatus ==
-													"Subscribed"
+												"Subscribed"
 													? "bg-emerald-200 text-emerald-800"
 													: "bg-red-200 text-red-800"
 											}
