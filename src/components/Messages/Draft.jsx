@@ -17,9 +17,10 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import {messagesTableData} from "@/src/Data";
 
 function MessageDraft() {
+	const messagesTableData = useLoaderData();
+
 	return (
 		<div className="flex h-[100%] flex-col p-8 overflow-y-scroll no-scrollbar">
 			<div className="flex gap-8 mb-6">

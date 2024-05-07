@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,9 +17,10 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { messagesTableData } from "@/src/Data";
 
 function MessageSent() {
+	const messagesTableData = useLoaderData();
+
 	return (
 		<div className="flex h-[100%] flex-col p-8 overflow-y-scroll no-scrollbar">
 			<div className="flex gap-8 mb-6">
@@ -93,12 +94,15 @@ function MessageSent() {
 
 									<TableCell>
 										<Badge
-											className={`rounded-md ${data.status === "Delivered"
-												? "bg-blue-200 text-blue-800"
-												: data.status === "Opened" || data.status === "Clicked"
+											className={`rounded-md ${
+												data.status === "Delivered"
+													? "bg-blue-200 text-blue-800"
+													: data.status ===
+															"Opened" ||
+													  data.status === "Clicked"
 													? "bg-emerald-200 text-emerald-800"
 													: "bg-red-200 text-red-800"
-												}`}
+											}`}
 											variant="primary"
 										>
 											{data.status}

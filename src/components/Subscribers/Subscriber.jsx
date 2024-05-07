@@ -1,3 +1,4 @@
+// Components
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,11 +17,15 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { subscriptionTableData } from "@/src/Data";
+
+// React Hooks
 import { useMemo, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+
 import Highlighter from "react-highlight-words";
 
 function Subscriber() {
+	const subscriptionTableData = useLoaderData();
 	const [subscriptionData, setSubscriptionData] = useState(
 		subscriptionTableData
 	);

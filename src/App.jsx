@@ -9,6 +9,7 @@ import Layout from "./Layout";
 import Subscriber from "./components/Subscribers/Subscriber";
 import MessageSent from "./components/Messages/Sent";
 import MessageDraft from "./components/Messages/Draft";
+import { subscriptionTableData, messagesTableData } from "./Data";
 
 const router = createBrowserRouter(
 	createRoutesFromChildren(
@@ -17,11 +18,23 @@ const router = createBrowserRouter(
 			<Route path="/dashboard" element={<div>Dashboard content</div>} />
 			<Route path="/campaigns" element={<div>Campaigns content</div>} />
 			<Route path="/templates" element={<div>Templates content</div>} />
-			<Route path="/subscribers" element={<Subscriber />} />
+			<Route
+				path="/subscribers"
+				element={<Subscriber />}
+				loader={() => subscriptionTableData}
+			/>
 			<Route path="/messages">
 				<Route index element={<Navigate to="/messages/sent" />} />
-				<Route path="sent" element={<MessageSent />} />
-				<Route path="draft" element={<MessageDraft />} />
+				<Route
+					path="sent"
+					element={<MessageSent />}
+					loader={() => messagesTableData}
+				/>
+				<Route
+					path="draft"
+					element={<MessageDraft />}
+					loader={() => messagesTableData}
+				/>
 			</Route>
 			<Route
 				path="/email-services"
@@ -37,7 +50,6 @@ const router = createBrowserRouter(
 
 function App() {
 	return <RouterProvider router={router} />;
-	// return <Component/>
 }
 
 export default App;
