@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,11 +18,26 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import {subscriptionTableData} from "@/src/Data";
+import {messagesTableData} from "@/src/Data";
 
-function Subscriber() {
+function MessageSent() {
 	return (
-		<div className="flex flex-col p-8 pb-0">
+		<div className="flex flex-col overflow-y-hidden p-8 pb-4">
+			<div className="flex gap-8 mb-6">
+				<NavLink
+					to={"/messages"}
+					className="py-[4px] px-2 border-b-[3px] border-blue-700 cursor-pointer"
+				>
+					Sent
+				</NavLink>
+
+				<NavLink
+					to={"/messages/draft"}
+					className="py-[4px] px-2 border-b-[3px] border-transparent cursor-pointer"
+				>
+					Draft
+				</NavLink>
+			</div>
 			<div className="flex flex-row gap-5 justify-between">
 				<div className="flex flex-row space-x-4">
 					<Input
@@ -45,50 +61,52 @@ function Subscriber() {
 					</Select>
 					<Button>Search</Button>
 				</div>
-				<div className="flex flex-row space-x-4">
-					<div className="flex space-x-2">
-						<Button>btn1</Button>
-						<Button>btn2</Button>
-					</div>
-					<Button variant="secondary">+ New Subscriber</Button>
-				</div>
 			</div>
 
-			<div className="mt-4 overflow-auto lg:h-[525px]">
+			<div className="mt-4 overflow-auto">
 				<Table className="bg-slate-100">
 					<TableHeader>
 						<TableRow>
-							<TableHead>Email</TableHead>
-							<TableHead>Name</TableHead>
-							<TableHead>Created</TableHead>
+							<TableHead>Date</TableHead>
+							<TableHead>Subject</TableHead>
+							<TableHead>Source</TableHead>
+							<TableHead>Recipient</TableHead>
 							<TableHead>Status</TableHead>
-							<TableHead>Actions</TableHead>
 						</TableRow>
 					</TableHeader>
 					<TableBody>
-						{subscriptionTableData.map((data, key) => {
+						{messagesTableData.map((data, key) => {
 							return (
 								<TableRow key={key}>
-									<TableCell>{data.email}</TableCell>
-									<TableCell>{data.name}</TableCell>
-									<TableCell>{data.lastActive}</TableCell>
+									<TableCell>{data.dateTime}</TableCell>
+
+									<TableCell className="max-w-[15rem] whitespace-nowrap overflow-hidden text-ellipsis">
+										{data.subject}
+									</TableCell>
+
+									<TableCell className="text-[#039adf]">
+										<i className="fa-solid fa-envelope text-gray-400"></i>{" "}
+										{data.source}
+									</TableCell>
+									<TableCell className="text-[#039adf]">
+										{data.email}
+									</TableCell>
+
 									<TableCell>
 										<Badge
-											className={
-												data.subscriptionStatus ==
-												"Subscribed"
+											className={`rounded-md ${
+												data.status === "Delivered"
+													? "bg-blue-200 text-blue-800"
+													: data.status ===
+															"Opened" ||
+													  data.status === "Clicked"
 													? "bg-emerald-200 text-emerald-800"
 													: "bg-red-200 text-red-800"
-											}
+											}`}
 											variant="primary"
 										>
-											{data.subscriptionStatus}
+											{data.status}
 										</Badge>
-									</TableCell>
-									<TableCell>
-										<Button variant="outline">
-											{data.actions}
-										</Button>
 									</TableCell>
 								</TableRow>
 							);
@@ -100,4 +118,4 @@ function Subscriber() {
 	);
 }
 
-export default Subscriber;
+export default MessageSent;

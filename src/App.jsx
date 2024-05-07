@@ -4,23 +4,25 @@ import {
 	createBrowserRouter,
 	createRoutesFromChildren,
 	Navigate,
-	Routes,
 } from "react-router-dom";
 import Layout from "./Layout";
 import Subscriber from "./components/Subscribers/Subscriber";
-import MessageSent from "./components/Messages/Messages.sent";
-import MessageDraft from "./components/Messages/Messages.draft";
+import MessageSent from "./components/Messages/Sent";
+import MessageDraft from "./components/Messages/Draft";
 
 const router = createBrowserRouter(
 	createRoutesFromChildren(
 		<Route path="/" element={<Layout />}>
-			<Route path="/" element={<Navigate to={"/dashboard"} />} />
+			<Route path="" element={<Navigate to={"/dashboard"} />} />
 			<Route path="/dashboard" element={<div>Dashboard content</div>} />
 			<Route path="/campaigns" element={<div>Campaigns content</div>} />
 			<Route path="/templates" element={<div>Templates content</div>} />
 			<Route path="/subscribers" element={<Subscriber />} />
-			<Route path="/messages" element={<MessageSent />} />
-			<Route path="/messages/draft" element={<MessageDraft />} />
+			<Route path="/messages">
+				<Route index element={<Navigate to="/messages/sent" />} />
+				<Route path="sent" element={<MessageSent />} />
+				<Route path="draft" element={<MessageDraft />} />
+			</Route>
 			<Route
 				path="/email-services"
 				element={<div>Email Services content</div>}
@@ -29,8 +31,6 @@ const router = createBrowserRouter(
 				path="/manage-users"
 				element={<div>Manage Users content</div>}
 			/>
-			<Route path="/help" element={<div>Help content</div>} />
-			<Route path="/about" element={<div>About content</div>} />
 		</Route>
 	)
 );
