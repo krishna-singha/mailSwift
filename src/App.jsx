@@ -4,9 +4,12 @@ import {
 	createBrowserRouter,
 	createRoutesFromChildren,
 	Navigate,
+	Routes,
 } from "react-router-dom";
 import Layout from "./Layout";
 import Subscriber from "./components/Subscribers/Subscriber";
+import MessageSent from "./components/Messages/Messages.sent";
+import MessageDraft from "./components/Messages/Messages.draft";
 
 const router = createBrowserRouter(
 	createRoutesFromChildren(
@@ -16,7 +19,8 @@ const router = createBrowserRouter(
 			<Route path="/campaigns" element={<div>Campaigns content</div>} />
 			<Route path="/templates" element={<div>Templates content</div>} />
 			<Route path="/subscribers" element={<Subscriber />} />
-			<Route path="/messages" element={<div>Messages content</div>} />
+			<Route path="/messages" element={<MessageSent />} />
+			<Route path="/messages/draft" element={<MessageDraft />} />
 			<Route
 				path="/email-services"
 				element={<div>Email Services content</div>}
