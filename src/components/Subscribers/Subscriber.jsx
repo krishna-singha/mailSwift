@@ -16,9 +16,28 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import {subscriptionTableData} from "@/src/Data";
+import { subscriptionTableData } from "@/src/Data";
+import { useMemo, useState } from "react";
+import Highlighter from "react-highlight-words";
 
 function Subscriber() {
+	const [subscriptionData, setSubscriptionData] = useState(subscriptionTableData);
+	const [searchString, setSearchString] = useState("");
+
+	useMemo(() => {
+		if (searchString === "") {
+			setSubscriptionData(subscriptionTableData);
+		} else {
+			const searchResults = subscriptionTableData.filter((data) =>
+				data.email.toLowerCase().includes(searchString.toLowerCase())
+			);
+			setSubscriptionData(searchResults);
+		}
+	}, [searchString]);
+
+
+
+
 	return (
 		<div className="flex flex-col p-8 pb-0">
 			<div className="flex flex-row gap-5 justify-between">
@@ -26,6 +45,7 @@ function Subscriber() {
 					<Input
 						className="max-w-60 min-w-24"
 						placeholder="Search..."
+						onChange={(e) => setSearchString(e.target.value)}
 					/>
 					<Select>
 						<SelectTrigger
@@ -42,7 +62,6 @@ function Subscriber() {
 							<SelectItem value="option4">Option 4</SelectItem>
 						</SelectContent>
 					</Select>
-					<Button>Search</Button>
 				</div>
 				<div className="flex flex-row space-x-4">
 					<div className="flex space-x-2">
@@ -65,17 +84,22 @@ function Subscriber() {
 						</TableRow>
 					</TableHeader>
 					<TableBody>
-						{subscriptionTableData.map((data, key) => {
+						{subscriptionData.map((data, key) => {
 							return (
 								<TableRow key={key}>
-									<TableCell>{data.email}</TableCell>
+									<TableCell>
+										<Highlighter
+											searchWords={[searchString]}
+											textToHighlight={data.email}
+										/>
+									</TableCell>
 									<TableCell>{data.name}</TableCell>
 									<TableCell>{data.lastActive}</TableCell>
 									<TableCell>
 										<Badge
 											className={
 												data.subscriptionStatus ==
-												"Subscribed"
+													"Subscribed"
 													? "bg-emerald-200 text-emerald-800"
 													: "bg-red-200 text-red-800"
 											}
