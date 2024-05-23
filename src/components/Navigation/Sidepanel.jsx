@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Sidepanel() {
@@ -10,7 +9,7 @@ function Sidepanel() {
 						to={"/"}
 						className="text-3xl font-bold text-blue-600 font-sans"
 					>
-						SIMPL EMAIL
+						Mail Swift
 					</NavLink>
 				</div>
 				<div className="flex flex-col flex-grow p-4 overflow-auto">
@@ -18,10 +17,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/dashboard"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
@@ -30,10 +28,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/campaigns"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
@@ -42,10 +39,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/templates"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
@@ -54,10 +50,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/subscribers"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
@@ -66,10 +61,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/messages"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
@@ -78,10 +72,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/email-services"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
@@ -90,10 +83,9 @@ function Sidepanel() {
 						<NavLink
 							to={"/manage-users"}
 							className={({ isActive }) =>
-								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${
-									isActive
-										? "text-white bg-blue-600 hover:bg-blue-700"
-										: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+								`px-4 py-3 justify-start rounded-none text-left text-sm font-medium ${isActive
+									? "text-white bg-blue-600 hover:bg-blue-700"
+									: "text-gray-600 hover:bg-blue-50 hover:text-blue-600"
 								}`
 							}
 						>
